@@ -1,6 +1,5 @@
 const express = require("express");
-const { check, validationResult } = require("express-validator");
-const User = require("./../models/User");
+const { check } = require("express-validator");
 const passport = require('passport')
 const authRouter = express.Router();
 const AuthController = require('./../controller/authController')
@@ -18,7 +17,7 @@ authRouter.post("/register", [check("username").isLength({ min: 5 }), check("pas
 
 authRouter.post(
   "/login",
-  passport.authenticate("local", { successRedirect: "/", failureRedirect: "/login", failureFlash: true }),
+  passport.authenticate("local", { successRedirect: "/", failureRedirect: "/auth/login", failureFlash: true }),
   (req, res) => {
     console.log(req.body);
     console.log("tutut");
