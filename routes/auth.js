@@ -3,7 +3,7 @@ const { check, validationResult } = require("express-validator");
 const User = require("./../models/User");
 const passport = require('passport')
 const authRouter = express.Router();
-const authController = require('./../controller/authController')
+const AuthController = require('./../controller/authController')
 
 
 authRouter.get("/register", (req, res) => {
@@ -14,7 +14,7 @@ authRouter.get("/login", (req, res) => {
   res.render("login");
 });
 
-authRouter.post("/register", [check("username").isLength({ min: 5 }), check("password").isLength({ min: 5 })], authController.register);
+authRouter.post("/register", [check("username").isLength({ min: 5 }), check("password").isLength({ min: 5 })], AuthController.register);
 
 authRouter.post(
   "/login",

@@ -6,6 +6,7 @@ class User {
     const {username, password} = props;
     this.username = username;
     this.password = password;
+    // this.created_at = new Date()
   }
 
   static async create (user)  {
