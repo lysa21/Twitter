@@ -8,15 +8,7 @@ const bodyParser = require("body-parser");
 // const session = require('express-session');
 // const orm = require('./db/orm.js');
 
-const mysql = require("mysql2");
-const pool = mysql.createPool({
-  host: process.env.DB_HOST,
-  user: "root",
-  database: "commons",
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0,
-});
+
 
 const PORT = 8080;
 const app = express();
