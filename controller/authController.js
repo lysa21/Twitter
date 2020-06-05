@@ -9,7 +9,7 @@ class AuthController {
     if (!errors.isEmpty()) return res.redirect("/auth/register");
     let user = new User(req.body);
     user.create();
-    res.redirect("/auth/register");
+    res.redirect("/auth/login");
   }
 }
 
