@@ -1,0 +1,33 @@
+<div class="main">
+
+    {{> header}}
+
+    <div class="timeline">
+        <h3>Accueil</h3>
+        <hr class="my-4">
+
+        <form class="form-tweet" action="/tweet" method="POST">
+            <div class="form-group">
+                <textarea cols="0" rows="5" name="content" class="form-control textarea" placeholder="Ce qui se passe?"
+                    autofocus></textarea>
+            </div>
+            <button class="button btn btn-lg btn-primary primary btn-block text-uppercase" type="submit">Tweet</button>
+        </form>
+
+
+        <div class="separador"></div>
+        <div class="tweets">
+
+            {{!-- {{#each tweets}}
+                <div>
+                    {{content}}
+                </div>
+            {{/each}} --}}
+        </div>
+
+    </div>
+
+    {{> tendance}}
+
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
