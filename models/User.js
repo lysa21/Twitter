@@ -9,10 +9,9 @@ class User {
     // this.created_at = new Date()
   }
 
-  static async create (user)  {
-    console.log(user);
+ async create() {
     let sql = "INSERT INTO user (username, password) values (?, ?)";
-    const [results, fields] = await db.execute(sql, [user.username, user.password]);
+    const [results, fields] = await db.execute(sql, [this.username, this.password]);
 
     return results;
   };

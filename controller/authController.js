@@ -8,10 +8,7 @@ class AuthController {
     const errors = validationResult(req);
     if (!errors.isEmpty()) return res.redirect("/auth/register");
     let user = new User(req.body);
-    //
-    //
-    //
-    User.create(user);
+    user.create();
     res.redirect("/auth/register");
   }
 }
